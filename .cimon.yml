@@ -7,7 +7,7 @@ staging:
     - npm install
   service: nodejs
   folder: /app
-  port: 5000
+  port: 80
   cmd: bin/web
   env:
     - NODE_ENV=production
