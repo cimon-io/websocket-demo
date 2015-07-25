@@ -1,0 +1,22 @@
+services:
+  nodejs:
+    from: 'node:0.12.2'
+
+staging:
+  prepare:
+    - npm install
+  service: nodejs
+  folder: /app
+  port: 5000
+  cmd: npm start
+  env:
+    - NODE_ENV=production
+
+tests:
+  prepare:
+    - npm install
+  service: nodejs
+  folder: /app
+  cmd: 'echo "........"'
+  env:
+    - NODE_ENV=production
