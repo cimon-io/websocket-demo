@@ -6,6 +6,7 @@ ws      = require("ws")
 app = express()
 
 app.get "/", (req, res) ->
+  console.log "Sending index.html"
   res.sendfile "#{__dirname}/index.html"
 
 server = http.createServer(app)
@@ -16,5 +17,5 @@ echo = new ws.Server(server:server)
 
 echo.on "connection", (connection) ->
   connection.on "message", (message) ->
-    console.log("send #{message}!")
+    console.log("send #{message}")
     connection.send message
