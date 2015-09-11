@@ -16,5 +16,5 @@ echo = new ws.Server(server:server)
 
 echo.on "connection", (connection) ->
   connection.on "message", (message) ->
-    console.log("send #{message}")
+    console.log("send #{message}!")
     connection.send message
