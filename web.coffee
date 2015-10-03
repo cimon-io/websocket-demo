@@ -6,7 +6,7 @@ ws      = require("ws")
 app = express()
 
 app.get "/", (req, res) ->
-  console.log "Sending index.html"
+  console.log "#{new Date} Sending index.html"
   res.sendfile "#{__dirname}/index.html"
 
 server = http.createServer(app)
@@ -19,3 +19,8 @@ echo.on "connection", (connection) ->
   connection.on "message", (message) ->
     console.log("send #{message}")
     connection.send message
+
+setInterval(
+  -> console.log(new Date),
+  60000
+)
