@@ -20,7 +20,7 @@ echo.on "connection", (connection) ->
     console.log("send #{message}")
     connection.send message
 
-setInterval(
-  -> console.log(new Date),
-  60000
-)
+# setInterval(
+#   -> console.log(new Date),
+#   60000
+# )
